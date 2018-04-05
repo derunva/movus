@@ -1,0 +1,347 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+img{
+  max-width: 100%;
+}
+html{
+  height: 100%;
+}
+body{
+  min-height: 100%;
+  border-top: 2px solid rgb(63, 78, 134);
+  padding-top: 20px;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  /*padding: 20px 0 0 0;*/
+}
+.wrapper{
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 10px; 
+}
+.header{
+  margin-bottom: 20px;
+}
+.header__top{
+  background: rgb(63, 78, 134);
+  padding: 10px;
+  font-size: 13px;
+  color: rgb(255,255,255);
+  text-align: center;
+  margin-bottom: 1px;
+}
+.header__top a{
+  color: #8db2de;
+}
+[href^="tel:"]{
+  text-decoration: none;
+  white-space: nowrap;
+}
+[href$=".zip"]{
+  color: red;
+}
+.row{
+  margin: 0 -10px;
+}
+.advantage{
+  height: 52px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  /*відносне позиціювання щоб дочірній блок з абсолютним позиціюванням бачив батьківський () цей блок*/
+  position: relative;
+  /*резервування місця під іконку, тому що вона вибита з потоку*/
+  padding-left: 70px;
+  color: #fff;
+}
+/*модифікатори до блоку переваги - міняють фонове зображення*/
+.advantage_bg1{
+  background-image: url('../images/advantagebg1.png'); 
+}
+.advantage_bg2{
+  background-image: url('../images/advantagebg2.png'); 
+}
+.advantage_bg3{
+  background-image: url('../images/advantagebg3.png'); 
+}
+.advantage__icon{
+  /*Стилі нижче вибивають елемент з потоку та абсолютно позиціонують*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*ширина і висота дана щоб відносно них відцентрувати іконку*/
+  width: 70px;
+  height: 52px;
+  /*центрування за допомогою флекбоксів*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.advantage__text{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 15px;
+}
+.logo{
+  display: block;
+  height: 52px;
+  line-height: 52px;
+  text-align: center;
+  background: #ededed;
+}
+.logo img{
+  vertical-align: middle;
+}
+ul.menu{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  z-index: 5;
+  background: #fff;
+  overflow-y: scroll;
+  transition: .5s all ease;
+}
+ul.menu.active{
+  left: 0;
+}
+ul.menu a{
+  color: #343434;
+  text-decoration: none;
+}
+ul.menu li{
+  list-style: none;
+}
+ul.menu > li{
+  border-bottom: 1px solid #d7d7d7;
+  margin-bottom: 1px;
+}
+ul.menu > li > a{
+  display: block;
+  padding: 10px;
+  background: #e4e5e9;
+}
+ul.menu > li:last-child{
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+ul.menu > li.active > a{
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#57669a+0,3b497c+100 */
+background: #57669a; /* Old browsers */
+background: -moz-linear-gradient(top, #57669a 0%, #3b497c 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #57669a 0%,#3b497c 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #57669a 0%,#3b497c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#57669a', endColorstr='#3b497c',GradientType=0 ); /* IE6-9 */
+}
+@media (min-width: 768px){
+  ul.menu > li.active > a{
+    margin-right: -15px;
+    padding-right: 25px;
+    position: relative;
+    overflow: hidden;
+  }
+  ul.menu > li.active > a:before{
+    content: '';
+    height: 100px;
+    width: 20px;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    right: -2px;
+    transform: rotate(25deg);
+  }
+  ul.menu > li.active > a:after{
+    content: '';
+    height: 100px;
+    width: 20px;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    right: -2px;
+    transform: rotate(-25deg);
+  }
+}
+ul.menu ul{
+  background: #dae0f7;
+} 
+ul.menu ul li{
+
+}
+ul.menu ul a{
+  display: block;
+  position: relative;
+  padding: 10px 10px 10px 30px;
+}
+ul.menu ul a:before{
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  height: 5px;
+  width: 5px;
+  border-radius: 5px;
+  background: #3f4e86;
+}
+.menu__opener{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border: 4px solid #fff;
+  border-radius: 40px;
+  z-index: 6;
+}
+.icon-list{
+  background: #3f4e86;
+  height: 40px;
+  width: 40px;
+  display: inline-flex;
+  border-radius: 40px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 8px 0 15px;
+  cursor: pointer;
+  transition: .5s all ease;
+}
+.icon-list span{
+  display: block;
+  background: #fff;
+  margin: 2px 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 3px;
+  position: relative;
+  transition: .5s all ease;
+}
+.icon-list span:before{
+  content: '';
+  height: 4px;
+  width: 4px;
+  position: absolute;
+  top: 0;
+  left: -8px;
+  border-radius: 3px;
+  background: #fff;
+  transition: .5s all ease;
+}
+.icon-list_opened span:nth-child(2){
+  opacity: 0;
+}
+.icon-list_opened{
+  padding-left: 8px;
+}
+.icon-list_opened span:nth-child(1){
+    transform: rotate(45deg) translateX(6px) translateY(6px);
+}
+.icon-list_opened span:nth-child(3){
+    transform: rotate(-45deg) translateX(6px) translateY(-6px);
+}
+.icon-list_opened span:before{
+  left: 0;
+}
+.c-text{
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+.c-text h1{
+  font-size: 24px;
+  font-weight: normal;
+  color: #3f4e86;
+  margin-bottom: 15px;
+}
+.c-text p{
+  margin-bottom: 15px;
+}
+.subheading,.c-text h2{
+  margin-bottom: 20px;
+  font-size: 21px;
+  font-weight: normal;
+}
+.opinion{
+  background: #3f4e86;
+  transition: .5s all ease;
+  padding: 15px 10px;
+  text-align: center;
+  color: #eff2fe;
+  height: 140px;
+  display: flex;
+  font-size: 13px;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.opinion__icon{
+  flex: 1;
+}
+.opinion__icon .icon{
+  transition: .5s all ease;
+}
+.opinion .icon:first-child{
+  position: relative;
+  z-index: 1;
+  transform: translateX(50%);
+}
+.opinion .icon:last-child{
+  transform: translateX(-50%);
+}
+.opinion__text{
+  overflow: hidden;
+}
+.opinion:hover{
+  background: #f9a513;
+  color: #000;
+}
+.opinion:hover .icon:first-child{
+  opacity: 0;
+}
+.footer{
+  padding: 10px 0;
+  border-top: 1px solid #8a8a8a;
+  color: #8a8a8a;
+  font-size: 12px;
+}
+.footer a{
+  color: inherit;
+}
+.pull-right{
+  float: right;
+}
+.clearfix:after,.row:after{
+  content: '';
+  width: 100%;
+  display: block;
+  clear: both;
+}
+[class*="col-"]{
+  padding: 0 10px;
+}
+@media (min-width: 768px){
+  .pull-right-tablet{
+    float: right;
+  }
+  .menu__opener{
+    display: none;
+  }
+  ul.menu{
+    position: static;
+    overflow-y: visible;
+  }
+  .col-tablet-1-4{
+    float: left;
+    width: 25%;
+  }
+  .col-tablet-3-4{
+    float: left;
+    width: 75%;
+  }
+  .col-tablet-1-3{
+    float: left;
+    width: 33.33%;
+  }
+}
